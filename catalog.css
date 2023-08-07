@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #f7ecd2;
+}
+.cards {
+  padding:20px 0;
+}
+.cards__container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.cards__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.cards__item {
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  overflow: hidden;
+}
+.cards__item-top{
+  position: relative;
+  overflow: hidden;
+}
+.cards__item-sale {
+  background-color: #a68083;
+  padding: 5px 10px;
+  color: #ffffff;
+  width: 40px;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  position: absolute;
+  z-index: 10000;
+}
+.cards__item-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in;
+}
+.cards__item-quick-view {
+  position:absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  display: none;
+  font-weight: 500;
+}
+.cards__item-title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-top: 15px;
+  font-size:20px;
+}
+.cards__item-price {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-top:10px;
+  font-size: 14px;
+}
+.cards__item-price-crossed-out {
+  text-decoration: line-through;
+  padding-right: 10px;
+}
+
+.cards__item:hover .cards__item-quick-view {
+  display: block;
+  animation: QuickViewBlock 0.5s ease-in;
+}
+.cards__item:hover .cards__item-image {
+  transform: scale(1.1);
+}
+
+@keyframes QuickViewBlock {
+  0% {
+    bottom: -40px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
